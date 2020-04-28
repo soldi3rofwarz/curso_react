@@ -1,0 +1,55 @@
+*{
+    margin:0;
+    padding: 0;
+    background-color: rgb(29, 28, 28);
+}
+
+.carrito
+{
+    position:fixed;
+    top: 0;
+    right: 0;
+    border: 5px white;
+    width: 400px;
+    color: white;
+}
+
+.card{
+   
+    width: 20%;
+    height: auto;
+    color: blanchedalmond;
+    box-shadow: 1px solid black;
+    margin: 20px;
+}
+button{
+    background-color: cadetblue;
+    width: 95px;
+    height: 40px;
+    box-shadow: none;
+    border: 0;
+    font-size: 25px;
+    color: cornsilk;
+    margin: 20px;
+}
+button:hover{
+    background-color: coral;
+    width: 90px;
+    height: 35px;
+
+}
+footer{
+    width: 100%;
+    position: absolute;
+    display: block;
+    color: white;
+    text-align: center;
+}
+header{
+    width: 100%;
+    position: absolute;
+    display: block;
+
+    color: white;
+    text-align: center;
+}
