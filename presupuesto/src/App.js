@@ -23,9 +23,14 @@ function App() {
         ...gasto,
         gastar
       ])
+      if (restante<0){
+        alert('no hay presupuesto')
+      }
+      else
+      {
       //resetear el presupuesto acutual
       const presRestante = restante-gastar.fcantidad
-      setRestante(presRestante)
+      setRestante(presRestante)}
 
       //resetear a false
       gCrearGasto(false)

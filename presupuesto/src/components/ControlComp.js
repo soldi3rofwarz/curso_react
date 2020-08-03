@@ -1,10 +1,17 @@
-import React, {Fragment} from 'react'
+import React, {Fragment, useEffect} from 'react'
 import {Revpres} from '../helper'
 import PropTypes from 'prop-types'
+import Error from './Error'
+
 
 const ControlPresupuesto = ({presupuesto, restante}) => {
+
+ 
+   
+
     return (  
         <Fragment>
+
             <div className="alert alert-primary">
                 presupuesto:${presupuesto}
             </div>

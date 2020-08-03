@@ -1,26 +1,59 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React ,{useState}from 'react';
+import Header from './Components/Header'
+import Formulario from './Components/Formulario'
+import Resumen from './Components/resumen'
+import Resultado from './Components/resultado'
+import Spinner from './Components/Spinner'
+import styled from '@emotion/styled'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+const Contenedor = styled.div`
+max-width: 600px;
+margin:0 auto;
+`
+const ContenedorForm = styled.div`
+background-color: #fff;
+padding: 3rem;
+`
+
+const App = () => {
+
+  const [resumen, getResumen] = useState({
+    cotizacion: 0,
+    datos:{
+      marcas: '',
+      year: '',
+      plan:''
+    }
+  })
+
+  const [cargando, funcCargando] = useState(false)
+
+  //extraer datos 
+  const {cotizacion,datos }= resumen;
+  return (  
+  <Contenedor>
+      <Header
+      titulo ='ella no te ama'
+    />
+
+    <ContenedorForm>
+      <Formulario
+        getResumen = {getResumen}  
+        funcCargando= {funcCargando}
+      />
+      {cargando? <Spinner/>: null}
+      
+      <Resumen
+        datos ={datos}
+      />
+      {cargando? <Resultado
+        cotizacion = {cotizacion}
+      />:null}
+      
+    </ContenedorForm>
+
+  </Contenedor>
   );
 }
-
+ 
 export default App;
