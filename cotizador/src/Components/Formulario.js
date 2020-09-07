@@ -49,7 +49,7 @@ const Error = styled.div`
 `;
 const Formulario = ({getResumen, funcCargando}) => {
 
-     const [fDatos,getfDatos] = useState({
+     const [datos,getfDatos] = useState({
          marcas: '',
          year: '',
          plan:''
@@ -58,12 +58,12 @@ const Formulario = ({getResumen, funcCargando}) => {
      const [error, getError]= useState(false)
 
      //extraer los valores del state
-     const {marcas, year, plan} = fDatos;
+     const {marcas, year, plan} = datos;
 
      //leer los datos del state
      const Getinf =e=>{
          getfDatos({
-             ...fDatos,
+             ...datos,
              [e.target.name]: e.target.value
          })
      }
@@ -108,7 +108,7 @@ const Formulario = ({getResumen, funcCargando}) => {
             //pasa la info al componente principal
             getResumen({
                 cotizacion:  Number(resultados),
-                fDatos
+                datos
             })
          }, 3000);
          
@@ -124,7 +124,7 @@ const Formulario = ({getResumen, funcCargando}) => {
             <Campo>
                 <Label>Marca</Label>
                 <Select 
-                    name= "Marca"
+                    name= "marcas"
                     value ={marcas}
                     onChange= {Getinf}
                 >

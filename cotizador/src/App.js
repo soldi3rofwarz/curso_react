@@ -33,7 +33,7 @@ const App = () => {
   return (  
   <Contenedor>
       <Header
-      titulo ='ella no te ama'
+      titulo ='Cotizacion de vehiculos'
     />
 
     <ContenedorForm>
